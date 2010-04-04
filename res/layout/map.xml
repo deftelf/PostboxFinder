@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/frame"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+  <uk.co.deftelf.postbox.PostboxMapView 
+  	android:id="@+id/map"
+  	android:apiKey="0f2nZD2caBHQpVvp620avpUWPpb65BKn7mCAm0A"
+  	android:layout_width="fill_parent"
+  	android:layout_height="fill_parent"
+  	android:clickable="true"/>
+</FrameLayout>
+
+<!-- carl-debug android:apiKey="0f2nZD2caBHQpVvp620avpUWPpb65BKn7mCAm0A" -->
+  	<!-- deftelf android:apiKey="0f2nZD2caBHSwtZikfKerqyHJec_o637zdqSQjQ" -->
+  	

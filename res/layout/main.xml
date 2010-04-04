@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout android:id="@+id/FrameLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent" 
+xmlns:android="http://schemas.android.com/apk/res/android" >
+<!-- <ImageView android:id="@+id/ImageView01" android:layout_width="wrap_content" android:layout_height="wrap_content"
+android:src="@drawable/pbox" android:scaleType="centerInside"></ImageView>-->
+<LinearLayout android:id="@+id/LinearLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content"
+android:background="@drawable/pbox" android:orientation="vertical">
+<Button android:text="@+id/Button02" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:visibility="invisible" android:id="@+id/spacerButton"></Button>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:typeface="normal" android:layout_gravity="center_horizontal" android:text="Finding your position..." android:id="@+id/statusText"></TextView>
+<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:text="Find local postboxes" android:id="@+id/showMapButton"></Button>
+
+
+
+</LinearLayout>
+</FrameLayout>
