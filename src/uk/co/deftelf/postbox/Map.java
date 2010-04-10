@@ -171,16 +171,14 @@ public class Map extends MapActivity {
         ArrayList<OverlayItem> pinsPast = new ArrayList<OverlayItem>();
         for (Postbox aBox : boxes.getAll()) {
             if (!aBox.isDisplayed()) {
+                OverlayItem item = new PostboxOverlayItem(new GeoPoint((int) (aBox
+                        .getLatitude() * 1000000), (int) (aBox
+                        .getLongitude() * 1000000)), aBox
+                        .getLocationInfo1(), aBox.getLocationInfo1(), aBox);
                 if (aBox.isStillToCollect(now)) {
-                    pinsActive.add(new OverlayItem(new GeoPoint((int) (aBox
-                            .getLatitude() * 1000000), (int) (aBox
-                            .getLongitude() * 1000000)), aBox
-                            .getLocationInfo1(), aBox.getLocationInfo1()));
+                    pinsActive.add(item);
                 } else {
-                    pinsPast.add(new OverlayItem(new GeoPoint((int) (aBox
-                            .getLatitude() * 1000000), (int) (aBox
-                            .getLongitude() * 1000000)), aBox
-                            .getLocationInfo1(), aBox.getLocationInfo1()));
+                    pinsPast.add(item);
                 }
                 aBox.setDisplayed();
             }
@@ -238,8 +236,7 @@ public class Map extends MapActivity {
             return retrieved;
 
         } catch (Exception ex) {
-            Toast
-                    .makeText(
+            Toast.makeText(
                             this,
                             "Sorry, unable to retrieve postbox locations at the current time.",
                             Toast.LENGTH_LONG).show();
@@ -280,9 +277,18 @@ public class Map extends MapActivity {
         @Override
         protected boolean onTap(int i) {
 
-            Toast.makeText(mv.getContext(), items.get(i).getTitle(),
-                    Toast.LENGTH_SHORT).show();
-
+            PostboxOverlayItem item = (PostboxOverlayItem) items.get(i);
+            /*Drawable marker = getResources().getDrawable(R.drawable.pbox_pin_active);
+            marker.setBounds(0, 0, marker.getIntrinsicWidth(), marker.getIntrinsicHeight());
+            item.setMarker(marker);*/
+            
+            Intent intent = new Intent(mv.getContext(), PostboxInfo.class);
+            item.postbox.calculateDistance(lastLocation.getLatitude(), lastLocation.getLongitude());
+            intent.putExtra("postbox", item.postbox);
+            startActivity(intent);
+            
+            //item.setMarker(null);
+            
             return (true);
         }
 

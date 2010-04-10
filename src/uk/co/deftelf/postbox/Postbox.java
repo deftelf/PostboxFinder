@@ -2,6 +2,8 @@ package uk.co.deftelf.postbox;
 
 
 
+import java.text.DecimalFormat;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -40,9 +42,17 @@ public class Postbox extends uk.co.deftelf.postbox.common.Postbox {
         return displayed;
     }
     
-    /*public Time getLastWeekDayCollectionAsTime() {
-        return 
-        
-    }*/
+    public String getLastWeekdayCollectionReadable() {
+        return toReadableTime(getLastWeekdayCollection());
+    }
+    
+    public String getLastSaturdayCollectionReadable() {
+        return toReadableTime(getLastSaturdayCollection());   
+    }
+    
+    static DecimalFormat timeFormatter = new DecimalFormat("00");
+    static String toReadableTime(int minutesAfterMidnight) {
+        return timeFormatter.format(minutesAfterMidnight / 60) + ":" + timeFormatter.format(minutesAfterMidnight % 60);
+    }
 
 }

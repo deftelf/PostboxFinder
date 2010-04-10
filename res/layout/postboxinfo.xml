@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:padding="10sp">
+	<TextView android:textSize="25sp" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:id="@+id/boxlocation1"></TextView>
+	<TextView android:textSize="25sp" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:id="@+id/boxlocation2"></TextView>
+	<LinearLayout
+	android:layout_width="wrap_content" android:layout_height="wrap_content"
+	android:orientation="horizontal">
+		<TextView android:textSize="15sp" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="Ref:  " />
+		<TextView android:textSize="15sp" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/boxref"></TextView>
+	</LinearLayout>
+	
+	<View android:layout_width="fill_parent" android:layout_height="2px" android:background="#A7A7A700" 
+	></View>
+	<LinearLayout
+	android:layout_width="wrap_content" android:layout_height="wrap_content"
+	android:orientation="horizontal">
+		<TextView android:textSize="25sp" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="Distance:  " />
+		<TextView android:textSize="25sp" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/distanceFromPosition"></TextView>
+	</LinearLayout>
+	
+	<View android:layout_width="fill_parent" android:layout_height="2px" android:background="#A7A7A700"></View>
+	<TextView android:textSize="15sp" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Time of last collection"></TextView>
+	<LinearLayout
+	android:layout_width="wrap_content" android:layout_height="wrap_content"
+	android:orientation="horizontal">
+		<TextView android:textSize="20sp" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="Weekdays:  " />
+		<TextView android:textSize="20sp" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/lastWeekdayCollection"></TextView>
+	</LinearLayout>
+	<LinearLayout
+	android:layout_width="wrap_content" android:layout_height="wrap_content"
+	android:orientation="horizontal">
+		<TextView android:textSize="20sp" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="Saturday:  " />
+		<TextView android:textSize="20sp" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/lastSaturdayCollection"></TextView>
+	</LinearLayout>
+</LinearLayout>
